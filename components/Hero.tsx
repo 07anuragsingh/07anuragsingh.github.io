@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.10, delay: 0.1 }}
             className="text-5xl lg:text-7xl font-heading font-bold mb-6 leading-tight"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
@@ -81,8 +81,8 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mt-12 flex gap-6 justify-center lg:justify-start"
           >
-             <a href="#" className="text-gray-500 hover:text-primary transition-colors"><Github size={24}/></a>
-             <a href="#" className="text-gray-500 hover:text-primary transition-colors"><Linkedin size={24}/></a>
+             <a href="https://github.com/07anuragsingh" className="text-gray-500 hover:text-primary transition-colors"><Github size={24}/></a>
+             <a href="https://www.linkedin.com/in/anurag-kumar-singh-64798724a/" className="text-gray-500 hover:text-primary transition-colors"><Linkedin size={24}/></a>
              <a href={`mailto:${personalInfo.email}`} className="text-gray-500 hover:text-primary transition-colors"><Mail size={24}/></a>
           </motion.div>
         </div>
