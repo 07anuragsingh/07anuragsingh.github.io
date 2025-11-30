@@ -8,7 +8,7 @@ export const personalInfo = {
   phone: "+91 8434845379",
   summary: "Enthusiastic BCA student with a strong foundation in web development fundamentals and programming. Eager to learn modern technologies like React and SEO, and to apply problem-solving and teamwork skills in real-world projects.",
   // Placeholder image for the user's profile picture as requested
-  profileImage: "https://media.licdn.com/dms/image/v2/D5603AQHVjJHyNi-jyQ/profile-displayphoto-scale_400_400/B56Zp4pZUdIYAg-/0/1762960744789?e=1766016000&v=beta&t=KyJzG9B7TALUlE-cnllmDX4OFBzgx3YvrNluC103-6k", 
+  profileImage: "https://media.licdn.com/dms/image/v2/D5603AQGbROhjcms_jQ/profile-displayphoto-crop_800_800/B56ZrUJIFbIcAI-/0/1764495754594?e=1766016000&v=beta&t=swOp2EszFNwzQmgFA544pYGUFGoBv7D9lFMuyBF7iNE", 
 };
 
 export const skills: SkillCategory[] = [
