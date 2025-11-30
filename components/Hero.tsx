@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
-              href="components\public\resume.pdf" 
+              href="/resume.pdf" 
               download="Anurag_Kumar_Singh_Resume.pdf"
               className="px-8 py-3 rounded-full border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2"
             >
