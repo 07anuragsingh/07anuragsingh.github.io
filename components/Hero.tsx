@@ -95,24 +95,45 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="relative w-72 h-72 sm:w-96 sm:h-96"
             >
-                {/* Decorative circles */}
-                <div className="absolute inset-0 rounded-full border-2 border-dashed border-gray-300 dark:border-gray-700 animate-[spin_20s_linear_infinite]"></div>
-                <div className="absolute inset-4 rounded-full border border-gray-200 dark:border-gray-800 animate-[spin_15s_linear_infinite_reverse]"></div>
-                
-                {/* Main Profile Image */}
-                <div className="absolute inset-6 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
+                {/* Decorative circles (stylish + neon + motion-safe) */}
+                <div
+                  className="absolute inset-0 rounded-full border-2 border-dashed border-blue-400/60 dark:border-blue-600/60 shadow-[0_0_30px_rgba(59,130,246,0.18)] motion-safe:animate-[spin_18s_linear_infinite] motion-reduce:animate-none pointer-events-none"
+                  aria-hidden="true"
+                />
+
+                <div
+                  className="absolute inset-4 rounded-full border-2 border-dashed border-pink-400/60 dark:border-pink-600/60 shadow-[0_0_24px_rgba(236,72,153,0.14)] motion-safe:animate-[spin_18s_linear_infinite_reverse] motion-reduce:animate-none pointer-events-none"
+                  aria-hidden="true"
+                />
+
+                {/* orbiting accent (small dot that orbits) */}
+                <motion.div
+                  aria-hidden="true"
+                  initial={false}
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                >
+                  <div className="absolute -top-3 right-6 w-3 h-3 rounded-full bg-gradient-to-br from-white to-blue-300 shadow-[0_0_10px_rgba(99,102,241,0.6)]" />
+                </motion.div>
+
+                {/* Profile wrap with subtle neon ring and glass backdrop */}
+                <div className="absolute inset-6 rounded-full overflow-hidden shadow-2xl border-4 border-white/60 dark:border-gray-800/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.00))]">
+                    <div className="absolute inset-0 rounded-full pointer-events-none mix-blend-screen opacity-70 blur-sm" />
                     <img 
                         src={personalInfo.profileImage} 
                         alt={personalInfo.name} 
                         className="w-full h-full object-cover"
                     />
+                    {/* subtle neon halo */}
+                    <div className="absolute -inset-1 rounded-full pointer-events-none blur-lg opacity-40 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12),rgba(139,92,246,0.06),transparent_50%)]" />
                 </div>
 
                 {/* Floating cards/badges */}
                 <motion.div 
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -right-4 top-10 bg-white dark:bg-gray-800 p-3 rounded-xl shadow-xl glass"
+                    className="absolute -right-4 top-10 bg-white/80 dark:bg-gray-900/70 backdrop-blur-md p-3 rounded-xl shadow-xl glass border border-white/10"
                 >
                     <span className="text-2xl">⚡</span>
                     <span className="font-bold text-sm ml-2">Fast Learner</span>
@@ -121,7 +142,7 @@ const Hero: React.FC = () => {
                 <motion.div 
                      animate={{ y: [0, 10, 0] }}
                      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute -left-4 bottom-20 bg-white dark:bg-gray-800 p-3 rounded-xl shadow-xl glass"
+                    className="absolute -left-4 bottom-20 bg-white/80 dark:bg-gray-900/70 backdrop-blur-md p-3 rounded-xl shadow-xl glass border border-white/10"
                 >
                     <span className="text-2xl">💻</span>
                     <span className="font-bold text-sm ml-2">React Developer</span>
