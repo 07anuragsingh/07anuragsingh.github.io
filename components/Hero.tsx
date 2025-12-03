@@ -106,16 +106,20 @@ const Hero: React.FC = () => {
                   aria-hidden="true"
                 />
 
-                {/* orbiting accent (small dot that orbits) */}
-                <motion.div
-                  aria-hidden="true"
-                  initial={false}
-                  animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
-                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                >
-                  <div className="absolute -top-5 right-5 w-5 h-5 rounded-full bg-gradient-to-br from-white to-blue-300 shadow-[0_0_10px_rgba(99,102,241,0.6)]" />
-                </motion.div>
+                {/* orbiting accent (removed) */}
+                <div className="absolute -top-5 right-5 pointer-events-none">
+                  {/* Moon: visible only in dark mode */}
+                  <div
+                    aria-hidden="true"
+                    className="hidden dark:block w-5 h-5 rounded-full bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.6)] transition-opacity duration-300"
+                  />
+
+                  {/* Sun: visible only in light mode */}
+                  <div
+                    aria-hidden="true"
+                    className="block dark:hidden w-6 h-6 rounded-full bg-gradient-to-br from-yellow-300 via-orange-400 to-red-400 shadow-[0_0_16px_rgba(253,186,116,0.5)] transition-opacity duration-300"
+                  />
+                </div>
 
                 {/* Profile wrap with subtle neon ring and glass backdrop */}
                 <div className="absolute inset-6 rounded-full overflow-hidden shadow-2xl border-4 border-white/60 dark:border-gray-800/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.00))]">
@@ -147,6 +151,8 @@ const Hero: React.FC = () => {
                     <span className="text-2xl">💻</span>
                     <span className="font-bold text-sm ml-2">React Developer</span>
                 </motion.div>
+
+
             </motion.div>
         </div>
       </div>
