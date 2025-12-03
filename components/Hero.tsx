@@ -114,7 +114,7 @@ const Hero: React.FC = () => {
                   transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
                   className="absolute inset-0 flex items-center justify-center pointer-events-none"
                 >
-                  <div className="absolute -top-3 right-6 w-3 h-3 rounded-full bg-gradient-to-br from-white to-blue-300 shadow-[0_0_10px_rgba(99,102,241,0.6)]" />
+                  <div className="absolute -top-5 right-5 w-5 h-5 rounded-full bg-gradient-to-br from-white to-blue-300 shadow-[0_0_10px_rgba(99,102,241,0.6)]" />
                 </motion.div>
 
                 {/* Profile wrap with subtle neon ring and glass backdrop */}
