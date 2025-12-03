@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
                 className="relative w-72 h-72 sm:w-96 sm:h-96"
             >
                 {/* Decorative circles */}
-                <div className="absolute inset-0 rounded-full border-2 border-dashed border-gray-300 dark:border-gray-700 animate-[spin_10s_linear_infinite]"></div>
+                <div className="absolute inset-0 rounded-full border-2 border-dashed border-gray-300 dark:border-gray-700 animate-[spin_20s_linear_infinite]"></div>
                 <div className="absolute inset-4 rounded-full border border-gray-200 dark:border-gray-800 animate-[spin_15s_linear_infinite_reverse]"></div>
                 
                 {/* Main Profile Image */}
