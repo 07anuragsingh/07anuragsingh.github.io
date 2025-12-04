@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Image / Visual */}
+        {/* Imge / Visual */}
         <div className="w-full lg:w-1/2 flex justify-center items-center relative">
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
