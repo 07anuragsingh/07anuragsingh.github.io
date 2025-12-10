@@ -26,6 +26,31 @@ const Contact: React.FC = () => {
     return regex.test(email);
   };
 
+  // Format phone for WhatsApp (keep only digits with country code)
+  const formatPhoneForWhatsApp = (phone?: string) => {
+    if (!phone) return '';
+    return phone.replace(/\D/g, '');
+  };
+
+  // Open WhatsApp with pre-filled message
+  const openWhatsApp = () => {
+    const phone = formatPhoneForWhatsApp(personalInfo.phone);
+    const name = formData.name || 'Visitor';
+    const email = formData.email || 'not-provided';
+    
+    const messageBody = `Hi! Anurag...\n\nI visited your portfolio and would like to discuss a potential project.\n\n${
+      formData.message ? `Message: ${formData.message}\n\n` : ''
+    }Looking forward to hearing from you!\n\nBest regards,`;
+
+    if (!phone) {
+      window.open('https://web.whatsapp.com/', '_blank');
+      return;
+    }
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(messageBody)}`;
+    window.open(url, '_blank');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -225,6 +250,17 @@ const Contact: React.FC = () => {
                             <Send size={20} />
                         </>
                     )}
+                </button>
+
+                <button 
+                    type="button"
+                    onClick={openWhatsApp}
+                    className="w-full py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-green-500/30"
+                >
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371 0-.57 0-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-.355.228-.558.561-.558.906 0 .348.203.679.56.909a9.879 9.879 0 005.031 1.378h.004c5.487 0 9.974-4.487 9.974-9.974 0-2.461-.917-4.769-2.608-6.514-.822-.852-1.922-1.412-3.158-1.412-1.237 0-2.336.56-3.158 1.412A9.885 9.885 0 0012.05 6.98z"/>
+                    </svg>
+                    Message on WhatsApp
                 </button>
 
                 {status === 'success' && (
