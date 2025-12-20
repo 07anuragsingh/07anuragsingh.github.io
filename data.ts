@@ -69,7 +69,7 @@ export const education: Education[] = [
     institution: "Guru Nanak College",
     degree: "BCA",
     date: "Sep 2022 – Sep 2025",
-    score: "74.5%",
+    score: "8.15 CGPA",
     location: "Dhanbad, Jharkhand"
   },
   {
