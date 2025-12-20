@@ -9,9 +9,17 @@ const playPopSound = () => {
   audio.play().catch(() => {});
 };
 
+const vibratePop = () => {
+  if (typeof navigator !== "undefined" && navigator.vibrate) {
+    navigator.vibrate([20, 40, 20]);
+  }
+};
+
+
 const HeartReaction = () => {
   useEffect(() => {
     playPopSound();
+    vibratePop();
   }, []);
   return (
     <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
