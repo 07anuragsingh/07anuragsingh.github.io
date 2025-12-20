@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { motion } from 'framer-motion';
 import { personalInfo } from '../data';
 import { Mail, Phone, MapPin, Send, Loader2, AlertCircle } from 'lucide-react';
 
+const playPopSound = () => {
+  const audio = new Audio("/sounds/mixkit-magic-bubbles-spell-2999.wav");
+  audio.volume = 0.05; // soft sound
+  audio.play().catch(() => {});
+};
+
 const HeartReaction = () => {
+  useEffect(() => {
+    playPopSound();
+  }, []);
   return (
     <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
       {Array.from({ length: 20 }).map((_, i) => (
