@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* Floating cards/badges */}
-                <motion.div 
+                {/* <motion.div 
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute -right-4 top-10 bg-white/80 dark:bg-gray-900/70 backdrop-blur-md p-3 rounded-xl shadow-xl glass border border-white/10"
@@ -150,7 +150,7 @@ const Hero: React.FC = () => {
                 >
                     <span className="text-2xl">💻</span>
                     <span className="font-bold text-sm ml-2">React Developer</span>
-                </motion.div>
+                </motion.div> */}
 
 
             </motion.div>
