@@ -1,20 +1,71 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 👋 Hi, I'm Anurag Singh  
+### Web Developer | React | TypeScript | UI Enthusiast
 
-# Run and deploy your AI Studio app
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-181717?style=for-the-badge&logo=github)
+![Profile Views](https://komarev.com/ghpvc/?username=07anuragsingh&style=for-the-badge)
 
-This contains everything you need to run your app locally.
+🌐 **Live Portfolio:**  
+👉 https://07anuragsingh.github.io/
 
-View your app in AI Studio: https://ai.studio/apps/drive/1DwRElcPpNmEV7kETqyjhBlkIyZMzALIl
+---
 
-## Run Locally
+## 🎯 Portfolio Goal
 
-**Prerequisites:**  Node.js
+This repository contains the source code of my **personal portfolio website**.  
+The goal of this project is to:
 
+- Showcase my **web development skills**
+- Present my **real-world projects**
+- Demonstrate my **UI/UX design sense**
+- Share my **learning and growth as a developer**
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+This portfolio is being built **step-by-step**, and it is under active development 🚀
+
+---
+
+## 🧠 About Me
+
+I am a passionate **Web Developer** who loves building:
+- Clean & modern user interfaces
+- Responsive web applications
+- Performance-optimized projects
+
+I enjoy working with **React**, smooth animations, and real client-based projects.
+
+---
+
+## ✨ Portfolio Features
+
+- ✅ Modern & minimal UI
+- ✅ Fully responsive design
+- ✅ Project showcase section
+- ✅ Smooth animations & transitions
+- 🔄 Video demo integration (coming soon)
+- 🔄 UI polish & accessibility improvements
+
+---
+
+## 🛠️ Tech Stack Used
+
+- **React (Vite)**
+- **TypeScript**
+- **JavaScript (ES6+)**
+- **HTML5**
+- **CSS3**
+- **GitHub Pages** (Deployment)
+
+---
+
+## 📂 Project Structure
+
+```text
+07anuragsingh.github.io/
+│── components/
+│── public/
+│── .github/workflows/
+│── App.tsx
+│── README.md
+
