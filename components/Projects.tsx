@@ -3,6 +3,11 @@ import { motion } from 'framer-motion';
 import { projects } from '../data';
 import { Github, ExternalLink, Code2 } from 'lucide-react';
 
+const normalizeUrl = (url?: string) => {
+  if (!url) return undefined;
+  return url.startsWith('http') ? url : `https://${url}`;
+};
+
 const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-[#0b1121]">
@@ -20,7 +25,7 @@ const Projects: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={`${project.title}-${index}`}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -31,25 +36,56 @@ const Projects: React.FC = () => {
                 {/* Project Header/Image Placeholder */}
                 <div className="h-48 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center p-6 relative group">
                     <Code2 size={64} className="text-gray-600 dark:text-gray-500" />
+
+                    {/* Always-available small action buttons (helpful on touch devices) */}
+                    <div className="absolute top-4 right-4 flex gap-2 z-10">
+                      {project.github && (
+                        <a
+                          href={normalizeUrl(project.github)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-white/95 text-gray-900 rounded-md hover:scale-110 transition-transform shadow-sm"
+                          aria-label={`View ${project.title} on GitHub`}
+                        >
+                          <Github size={16} />
+                        </a>
+                      )}
+
+                      {project.link && (
+                        <a
+                          href={normalizeUrl(project.link)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-white/95 text-gray-900 rounded-md hover:scale-110 transition-transform shadow-sm"
+                          aria-label={`Open live demo for ${project.title}`}
+                        >
+                          <ExternalLink size={16} />
+                        </a>
+                      )}
+                    </div>
+
+                    {/* Decorative overlay shown on hover for larger screens */}
                     <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-sm">
                         {project.github && (
                             <a 
-                                href={`https://${project.github}`} 
+                                href={normalizeUrl(project.github)} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="p-3 bg-white text-gray-900 rounded-full hover:scale-110 transition-transform"
                                 title="View Code"
+                                aria-label={`View ${project.title} code`}
                             >
                                 <Github size={20} />
                             </a>
                         )}
                         {project.link && (
                              <a 
-                                href={project.link} 
+                                href={normalizeUrl(project.link)} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="p-3 bg-white text-gray-900 rounded-full hover:scale-110 transition-transform"
                                 title="Live Demo"
+                                aria-label={`Open live demo for ${project.title}`}
                             >
                                 <ExternalLink size={20} />
                             </a>
@@ -67,14 +103,14 @@ const Projects: React.FC = () => {
                     
                     <div className="mb-4 flex-1">
                          <ul className="space-y-1">
-                             {project.description.map((desc, i) => (
+                             {(Array.isArray(project.description) ? project.description : [project.description]).map((desc, i) => (
                                  <li key={i} className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">• {desc}</li>
                              ))}
                          </ul>
                     </div>
 
                     <div className="flex flex-wrap gap-2 mt-auto">
-                        {project.tech.map((tech) => (
+                        {(project.tech || []).map((tech) => (
                             <span key={tech} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded text-gray-700 dark:text-gray-300 font-medium">
                                 {tech}
                             </span>
